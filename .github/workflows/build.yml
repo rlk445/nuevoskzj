@@ -17,6 +17,13 @@ jobs:
             https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
           ls -la Resources/hand_landmarker.task
 
+      - name: Garantir pastas de ambientes opcionais
+        run: |
+          for d in desert winterlodge bubbles ryokan dome spacestation cybercity sfx browser; do
+            mkdir -p "Resources/$d"
+            touch "Resources/$d/.gitkeep"
+          done
+
       - name: Instalar XcodeGen
         run: brew install xcodegen
 
